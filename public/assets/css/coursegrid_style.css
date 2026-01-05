@@ -1,0 +1,84 @@
+body, h2, h3, p, button, textarea {
+    margin: 0; padding: 0; font-family: Arial, sans-serif;
+}
+
+body {
+    background: #000; 
+    color: #fff;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+.course-box {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.course-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+}
+
+.course-box h3 { margin-bottom: 10px; font-size: 18px; }
+.course-box p { font-size: 14px; color: #ccc; margin-bottom: 15px; }
+
+.course-box button {
+    margin-right: 8px;
+    padding: 6px 12px;
+    border: 1px solid #fff;
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.course-box button:hover {
+    background: #fff;
+    color: #000;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top:0; left:0; width:100%; height:100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.popup-content {
+    background: #111;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    color: #fff;
+}
+
+.popup-content h2 { margin-bottom: 15px; }
+.popup-content p { margin-bottom: 10px; color: #ccc; }
+
+.popup .close {
+    position: absolute;
+    top:10px; right:15px;
+    cursor: pointer; font-size: 24px;
+}
+
+textarea {
+    width: 100%; padding: 8px; margin-top: 10px;
+    border-radius: 5px; border: 1px solid #333;
+    background: #000; color: #fff; resize: none;
+}
+textarea::placeholder { color: #777; }
+.popup-content button { margin-top: 10px; }
