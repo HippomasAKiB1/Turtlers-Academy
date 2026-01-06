@@ -31,3 +31,14 @@ function submitQuiz() {
         }
     });
 }
+
+function validateQuiz() {
+    let checked = document.querySelectorAll('input[type="radio"]:checked');
+
+    if (checked.length === 0) {
+        alert("Please answer at least one question.");
+        return false;
+    }
+    return true;
+}
+

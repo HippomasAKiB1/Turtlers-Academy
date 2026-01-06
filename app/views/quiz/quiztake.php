@@ -3,7 +3,8 @@
 
 <h2>Take Quiz</h2>
 
-<form id="quizForm">
+<form id="quizForm" onsubmit="return validateQuiz();">
+    
 <input type="hidden" id="quiz_id" value="<?= $quiz_id ?>">
 
 <?php foreach ($questions as $q) { ?>
