@@ -1,34 +1,74 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title><?= htmlspecialchars($thread['title']) ?></title>
     <link rel="stylesheet" href="assets/css/forum_style.css">
 </head>
+
 <body>
 
-<div class="container">
-    <h2><?= htmlspecialchars($thread['title']) ?></h2>
-    <p><?= nl2br(htmlspecialchars($thread['description'])) ?></p>
-    <small>Posted by <?= $thread['fullname'] ?> | <?= $thread['created_at'] ?></small>
+    <div class="container">
+        <h2><?= htmlspecialchars($thread['title']) ?></h2>
+        <p><?= nl2br(htmlspecialchars($thread['description'])) ?></p>
+        <small>Posted by <?= $thread['fullname'] ?> | <?= $thread['created_at'] ?></small>
 
-    <hr>
+        <hr>
 
-    <h3>Discussion</h3>
+        <h3>Discussion</h3>
 
-    <?php while($c = mysqli_fetch_assoc($comments)) { ?>
-        <div class="comment">
-            <strong><?= $c['fullname'] ?></strong>
-            <p><?= nl2br(htmlspecialchars($c['comment'])) ?></p>
-            <small><?= $c['created_at'] ?></small>
-        </div>
-    <?php } ?>
+        <?php while ($c = mysqli_fetch_assoc($comments)) { ?>
+            <div class="comment">
+                <strong><?= $c['fullname'] ?></strong>
+                <p><?= nl2br(htmlspecialchars($c['comment'])) ?></p>
+                <small><?= $c['created_at'] ?></small>
+            </div>
+        <?php } ?>
 
-    <form method="POST" action="forum.php?action=comment">
-        <input type="hidden" name="thread_id" value="<?= $thread['id'] ?>">
-        <textarea name="comment" placeholder="Write your reply..." required></textarea>
-        <button class="btn">Reply</button>
-    </form>
-</div>
+        <form id="commentForm" method="POST" action="forum.php?action=comment">
+            <input type="hidden" name="thread_id" value="<?= $thread['id'] ?>">
+            <textarea name="comment" placeholder="Write your reply..." required></textarea>
+            <button class="btn">Reply</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            let formData = new FormData(this);
+            formData.append('ajax', 1);
+
+            fetch('forum.php?action=comment', {
+                method: 'POST',
+                body: formData
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status === 'ok') {
+                        // Append new comment
+                        let div = document.createElement('div');
+                        div.className = 'comment';
+                        div.style.backgroundColor = '#e8fdf5'; // Highlight new comment
+                        div.innerHTML = `
+                <strong>${data.user}</strong>
+                <p>${data.comment.replace(/\n/g, '<br>')}</p>
+                <small>${data.date}</small>
+            `;
+                        // Insert before the form
+                        let form = document.getElementById('commentForm');
+                        form.parentNode.insertBefore(div, form);
+
+                        // Clear textarea
+                        form.querySelector('textarea').value = '';
+                    } else {
+                        alert("Error: " + data.message);
+                    }
+                })
+                .catch(err => console.error(err));
+        });
+    </script>
+    </div>
 
 </body>
+
 </html>

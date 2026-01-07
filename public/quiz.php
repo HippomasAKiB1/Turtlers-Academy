@@ -12,7 +12,6 @@ if ($action === 'list') {
     quizList();
 } elseif ($action === 'take' && $quiz_id > 0) {
     takeQuiz($quiz_id);
-    echo $quiz_id;
 } elseif ($action === 'leaderboard') {
     leaderboard();
 } else {

@@ -1,5 +1,6 @@
 <?php
+session_start();
 
-require_once __DIR__ . '/../app/views/home/home.php';
+require_once __DIR__ . '/../app/controllers/HomeController.php';
 
 ?>
