@@ -1,6 +1,4 @@
-/* General Dashboard Container */
 
-/* Base Styles - Previously in main stylesheet */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -8,9 +6,8 @@ body {
     transition: background 0.3s ease;
 }
 
-/* Theme Colors (Required for your JS Toggler to work) */
 body.light-mode {
-    background: #f4f7f6; /* A light grey is usually better for dashboards */
+    background: #f4f7f6; 
     color: #333;
 }
 
@@ -19,14 +16,14 @@ body.dark-mode {
     color: #e5e5e5;
 }
 
-/* Dashboard Specific Styles */
+
 .dashboard {
     width: 70%;
     margin: 40px auto;
 }
 
 .dashboard-card {
-    background: white; /* Default for light mode */
+    background: white; 
     padding: 20px;
     margin-bottom: 25px;
     border-radius: 8px;
@@ -34,7 +31,7 @@ body.dark-mode {
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-/* Adjusting card colors for Dark Mode */
+
 body.dark-mode .dashboard-card {
     background: #2d2d2d;
     border-color: #444;
@@ -51,7 +48,7 @@ body.dark-mode .dashboard-card {
     color: inherit;
 }
 
-/* Individual Cards */
+
 .dashboard-card {
     background: #f9f9f9;
     padding: 20px;
@@ -60,7 +57,7 @@ body.dark-mode .dashboard-card {
     border: 1px solid #ddd;
 }
 
-/* Progress Bar Styling */
+
 .progress-bar {
     width: 100%;
     height: 22px;
@@ -80,7 +77,7 @@ body.dark-mode .dashboard-card {
     transition: width 0.5s ease-in-out;
 }
 
-/* Flexbox Stats Row */
+
 .stats {
     display: flex;
     justify-content: space-between;
@@ -91,7 +88,7 @@ body.dark-mode .dashboard-card {
     width: 30%;
 }
 
-/* Dark Mode Support for Dashboard Cards */
+
 body.dark-mode .dashboard-card {
     background: rgba(255, 255, 255, 0.08);
     border-color: #444;

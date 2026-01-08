@@ -45,20 +45,20 @@
                 .then(res => res.json())
                 .then(data => {
                     if (data.status === 'ok') {
-                        // Append new comment
+                        
                         let div = document.createElement('div');
                         div.className = 'comment';
-                        div.style.backgroundColor = '#e8fdf5'; // Highlight new comment
+                        div.style.backgroundColor = '#e8fdf5'; 
                         div.innerHTML = `
                 <strong>${data.user}</strong>
                 <p>${data.comment.replace(/\n/g, '<br>')}</p>
                 <small>${data.date}</small>
             `;
-                        // Insert before the form
+                        
                         let form = document.getElementById('commentForm');
                         form.parentNode.insertBefore(div, form);
 
-                        // Clear textarea
+                        
                         form.querySelector('textarea').value = '';
                     } else {
                         alert("Error: " + data.message);

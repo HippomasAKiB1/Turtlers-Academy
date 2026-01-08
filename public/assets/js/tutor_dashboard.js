@@ -1,4 +1,4 @@
-// Navigation
+
 async function ajaxTutor(action) {
     const displayArea = document.getElementById('main-display');
     const res = await fetch(`/Turtlers-Academy/app/controllers/TutorController.php?action=${action}`);
@@ -6,7 +6,7 @@ async function ajaxTutor(action) {
     displayArea.innerHTML = html;
 }
 
-// File Upload (Stops page reload)
+
 async function submitUpload(e) {
     e.preventDefault();
     const form = document.getElementById('uploadForm');
@@ -27,7 +27,7 @@ async function submitUpload(e) {
     }
 }
 
-// Search: Courses
+
 function filterCourses() {
     let input = document.getElementById('courseSearch').value.toLowerCase();
     let cards = document.getElementsByClassName('course-card');
@@ -46,7 +46,7 @@ function filterCourses() {
     noResults.style.display = (visibleCount === 0) ? "block" : "none";
 }
 
-// Search: Students
+
 function filterStudents() {
     let input = document.getElementById('studentSearch').value.toLowerCase();
     let rows = document.getElementsByClassName('student-row');

@@ -10,12 +10,12 @@ document.querySelectorAll('.details-btn').forEach(btn => {
     });
 });
 
-// Close popup
+
 document.querySelector('.popup .close').addEventListener('click', function(){
     document.getElementById('course-popup').style.display = 'none';
 });
 
-// Close popup if click outside content
+
 document.getElementById('course-popup').addEventListener('click', function(e){
     if(e.target === this){
         this.style.display = 'none';

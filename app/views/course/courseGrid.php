@@ -18,7 +18,7 @@
 <?php endforeach; ?>
 </div>
 
-<!-- Popup -->
+
 <div id="course-popup" class="popup">
     <div class="popup-content">
         <span class="close">&times;</span>

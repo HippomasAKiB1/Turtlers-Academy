@@ -1,6 +1,6 @@
 <?php include "../app/views/partials/header.php"; ?>
 
-<!-- Hero Section -->
+
 <section class="hero-section" style="
     text-align: center; padding: 80px 20px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     margin-bottom: 50px;
@@ -20,14 +20,14 @@
     </a>
 </section>
 
-<!-- Courses Section -->
+
 <section id="courses" style="max-width: 1200px; margin: 0 auto 80px; padding: 20px;">
     <div class="section-header" style="text-align: center; margin-bottom: 40px;">
         <h2 style="font-size: 2.2rem; font-weight: 700; color: #111;">Discover Our Courses</h2>
         <p style="color: #777; margin-top: 10px;">Explore a wide range of topics curated for you.</p>
     </div>
 
-    <!-- Reusing Course Grid Styles -->
+   
     <link rel="stylesheet" href="assets/css/coursegrid_style.css">
 
     <div class="course-grid">
@@ -45,7 +45,7 @@
     </div>
 </section>
 
-<!-- Tutors Section -->
+
 <section id="tutors" style="background: #fdfdfd; padding: 80px 20px;">
     <div style="max-width: 1200px; margin: 0 auto;">
         <div class="section-header" style="text-align: center; margin-bottom: 50px;">
@@ -81,7 +81,7 @@
     </div>
 </section>
 
-<!-- Reusing Course Script for Popup -->
+
 <div id="course-popup" class="popup">
     <div class="popup-content">
         <span class="close">&times;</span>

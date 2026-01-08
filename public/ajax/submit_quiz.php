@@ -13,13 +13,13 @@ if (!isset($_SESSION['user_id'])) {
 $quiz_id = intval($_POST['quiz_id'] ?? 0);
 $answers = json_decode($_POST['answers'] ?? '{}', true);
 
-// Allow empty answers (score will be 0)
+
 if (!$quiz_id) {
     echo json_encode(['status' => 'error']);
     exit;
 }
 
-// Fetch correct answers
+
 $questions = getQuestions($quiz_id);
 $total = count($questions);
 $score = 0;
@@ -34,7 +34,7 @@ foreach ($questions as $q) {
 
 $percentage = round(($score / $total) * 100, 2);
 
-// Save attempt
+
 saveAttempt($user_id, $quiz_id, $score, $total, $percentage);
 
 echo json_encode([

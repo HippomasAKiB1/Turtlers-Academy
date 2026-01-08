@@ -1,4 +1,4 @@
-// Timer Logic
+
 document.addEventListener("DOMContentLoaded", function () {
     if (typeof TIME_LIMIT_MINUTES !== 'undefined' && TIME_LIMIT_MINUTES > 0) {
         startTimer(TIME_LIMIT_MINUTES * 60);
@@ -36,9 +36,7 @@ function submitQuiz() {
         answers[qid] = r.value;
     });
 
-    // Allow empty submission if time is up (handled by backend or logic)
-    // But for manual submit, validate:
-    // (If called by timer, we might submit whatever is checked)
+    
 
     let formData = new FormData();
     formData.append("quiz_id", quizId);
@@ -52,7 +50,7 @@ function submitQuiz() {
         .then(data => {
             let resDiv = document.getElementById("result");
             if (data.status === "ok") {
-                // Improve result display
+                
                 resDiv.innerHTML = `
                 <div style="background:#e8fdf5; border:1px solid #2ecc71; padding:20px; text-align:center; margin-top:20px; border-radius:8px;">
                     <h2 style="color:#27ae60; margin:0 0 10px 0;">Quiz Completed!</h2>
@@ -62,9 +60,9 @@ function submitQuiz() {
                     <button onclick="location.reload()" style="padding:10px 20px; cursor:pointer;">Retake</button>
                 </div>
             `;
-                // Scroll to result
+                
                 resDiv.scrollIntoView({ behavior: "smooth" });
-                // Disable form
+               
                 document.getElementById("quizForm").style.opacity = "0.5";
                 document.getElementById("quizForm").style.pointerEvents = "none";
 

@@ -145,7 +145,7 @@
         </div>
     </div>
 
-    <!-- Success Popup -->
+    
     <div class="popup" id="successPopup">
         <div class="popup-content">
             <span class="checkmark">✔</span>
@@ -173,10 +173,10 @@
                 method: 'POST',
                 body: formData
             })
-                .then(res => res.text()) // Get raw text first
+                .then(res => res.text()) 
                 .then(text => {
                     try {
-                        return JSON.parse(text); // Try parsing JSON
+                        return JSON.parse(text); 
                     } catch (e) {
                         console.error("Server Error:", text);
                         throw new Error("Server returned invalid JSON: " + text.substring(0, 150) + "..."); 
@@ -193,7 +193,7 @@
                 })
                 .catch(err => {
                     console.error(err);
-                    alert("Debug Error: " + err.message); // Show actual error to user
+                    alert("Debug Error: " + err.message);
                     btn.innerText = originalText;
                     btn.disabled = false;
                 });

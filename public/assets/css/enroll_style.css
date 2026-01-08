@@ -41,7 +41,7 @@ button:hover {
     border:1px dashed #444;
 }
 
-/* Popup */
+
 .popup {
     display:none;
     position:fixed;
