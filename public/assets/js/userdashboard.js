@@ -1,23 +1,17 @@
-document.addEventListener("DOMContentLoaded", function() {
-    
-    
-    const hour = new Date().getHours();
-    let greeting = "Welcome";
+document.addEventListener("DOMContentLoaded", function () {
+    var h = new Date().getHours();
+    var greet = "Welcome";
 
-    if(hour < 12) {
-        greeting = "Good Morning";
-    } else if(hour < 18) {
-        greeting = "Good Afternoon";
+    if (h < 12) {
+        greet = "Good Morning";
+    } else if (h < 18) {
+        greet = "Good Afternoon";
     } else {
-        greeting = "Good Evening";
+        greet = "Good Evening";
     }
 
-    
-    const greetingElement = document.querySelector(".dashboard-card h3");
-    if (greetingElement) {
-        greetingElement.innerText = `${greeting}, Nazat`;
+    var el = document.querySelector(".dashboard-card h3");
+    if (el) {
+        el.innerText = greet + ", Nazat";
     }
-
-    
-    console.log("Dashboard loaded for user: Nazat");
 });

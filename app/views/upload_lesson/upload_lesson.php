@@ -1,16 +1,6 @@
 <?php
-/*session_start();
-if(isset($_SESSION['status']) !== true){
-    header('location: ../../public/login.html');
-    exit;
-}
-if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin'){
-    echo "Access Denied";
-    exit;
-}*/
 require_once "../../models/LessonModel.php";
 require_once "../../models/AdminCourseModel.php";
-//
 
 $courses = getAllCourses($db);
 ?>

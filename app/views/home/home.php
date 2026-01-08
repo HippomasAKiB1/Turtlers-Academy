@@ -6,15 +6,15 @@
     margin-bottom: 50px;
 ">
     <h1 style="font-size: 3rem; font-weight: 800; color: #111; margin-bottom: 20px;">
-        Welcome to <span style="color: #3a6cf4;">Turtlers Academy</span>
+        Welcome to <span style="color: #ff7b00;">Turtlers Academy</span>
     </h1>
     <p style="font-size: 1.2rem; color: #555; max-width: 600px; margin: 0 auto 30px;">
         Unlock your potential with our expert-led courses. Join a community of learners and achieve your goals today.
     </p>
     <a href="course.php" style="
-        display: inline-block; padding: 15px 30px; background: #3a6cf4; color: white;
+        display: inline-block; padding: 15px 30px; background: #ff7b00; color: white;
         text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem;
-        transition: transform 0.2s; box-shadow: 0 5px 15px rgba(58, 108, 244, 0.3);
+        transition: transform 0.2s; box-shadow: 0 5px 15px rgba(255, 123, 0, 0.3);
     " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
         Discover Courses
     </a>
@@ -64,7 +64,7 @@
                 " onmouseover="this.style.transform='translateY(-5px)'"
                     onmouseout="this.style.transform='translateY(0)'">
                     <div style="
-                        width: 80px; height: 80px; background: #3a6cf4; color: white;
+                        width: 80px; height: 80px; background: #ff7b00; color: white;
                         border-radius: 50%; display: flex; align-items: center; justify-content: center;
                         font-size: 2rem; font-weight: 700; margin: 0 auto 20px;
                     ">

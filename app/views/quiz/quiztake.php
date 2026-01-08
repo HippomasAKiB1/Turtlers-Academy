@@ -8,7 +8,6 @@
 </div>
 
 <script>
-    // Pass time limit to JS (in minutes)
     const TIME_LIMIT_MINUTES = <?= intval($quiz['time_limit']) ?>; 
 </script>
 

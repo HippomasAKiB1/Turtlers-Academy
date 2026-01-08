@@ -2,7 +2,7 @@
 
 
 function getAllCourses($conn){
-    $res = mysqli_query($conn, "SELECT * FROM courses");
+    $res = mysqli_query($conn, "SELECT * FROM course");
     $courses = [];
     while($row = mysqli_fetch_assoc($res)){
         $courses[] = $row;
@@ -12,7 +12,7 @@ function getAllCourses($conn){
 
 function getCourseDetails($conn, $id){
     $id = intval($id);
-    $res = mysqli_query($conn, "SELECT * FROM courses WHERE id=$id");
+    $res = mysqli_query($conn, "SELECT * FROM course WHERE id=$id");
     return mysqli_fetch_assoc($res);
 }
 

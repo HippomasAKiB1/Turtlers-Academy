@@ -1,13 +1,7 @@
 <?php
-/*session_start();
-if(isset($_SESSION['status']) !== true){
-    header('location: ../../public/login.html');
-    exit;
-}*/
-
 require_once "../../models/AdminCourseModel.php";
 require_once "../../models/LessonModel.php";
-//include "../partials/header.php";
+
 
 if (isset($_GET['course_id'])) {
     $course_id = (int)$_GET['course_id'];

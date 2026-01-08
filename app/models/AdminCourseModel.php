@@ -2,72 +2,65 @@
 $db = mysqli_connect("localhost", "root", "", "turtlers_academy");
 
 if (!$db) {
-    die("Database Connection failed: " . mysqli_connect_error());
+    die("Connection error: " . mysqli_connect_error());
 }
 
-
-function getAllCourses($db) {
+function getManagementCourses($db) {
     $sql = "SELECT * FROM course ORDER BY id DESC";
-    $result = mysqli_query($db, $sql);
-    if (!$result) return [];
-    return mysqli_fetch_all($result, MYSQLI_ASSOC);
+    $res = mysqli_query($db, $sql);
+    $all = array();
+    if ($res) {
+        while ($row = mysqli_fetch_assoc($res)) {
+            $all[] = $row;
+        }
+    }
+    return $all;
 }
-
-
 
 function getCourseById($db, $id) {
-    $id = (int)$id; 
+    $id = intval($id);
     $sql = "SELECT * FROM course WHERE id = $id";
-    $result = mysqli_query($db, $sql);
-    return mysqli_fetch_assoc($result);
+    $res = mysqli_query($db, $sql);
+    return mysqli_fetch_assoc($res);
 }
 
-
-
-function addCourse($db, $code, $name, $instructor, $description, $image) {
+function addCourse($db, $code, $name, $tutor, $desc, $img) {
     $code = mysqli_real_escape_string($db, $code);
     $name = mysqli_real_escape_string($db, $name);
-    $instructor = mysqli_real_escape_string($db, $instructor);
-    $description = mysqli_real_escape_string($db, $description);
-    $image = mysqli_real_escape_string($db, $image);
+    $tutor = mysqli_real_escape_string($db, $tutor);
+    $desc = mysqli_real_escape_string($db, $desc);
+    $img = mysqli_real_escape_string($db, $img);
 
     $sql = "INSERT INTO course (course_code, course_name, instructor_name, description, course_image) 
-            VALUES ('$code', '$name', '$instructor', '$description', '$image')";
+            VALUES ('$code', '$name', '$tutor', '$desc', '$img')";
     return mysqli_query($db, $sql);
 }
 
-
-function updateCourseWithImage($db, $id, $code, $name, $instructor, $description, $image) {
-    $id = (int)$id;
+function updateCourseWithImage($db, $id, $code, $name, $tutor, $desc, $img) {
+    $id = intval($id);
     $code = mysqli_real_escape_string($db, $code);
     $name = mysqli_real_escape_string($db, $name);
-    $instructor = mysqli_real_escape_string($db, $instructor);
-    $description = mysqli_real_escape_string($db, $description);
-    $image = mysqli_real_escape_string($db, $image);
+    $tutor = mysqli_real_escape_string($db, $tutor);
+    $desc = mysqli_real_escape_string($db, $desc);
+    $img = mysqli_real_escape_string($db, $img);
 
-    $sql = "UPDATE course SET course_code='$code', course_name='$name', instructor_name='$instructor', description='$description', course_image='$image' WHERE id=$id";
+    $sql = "UPDATE course SET course_code='$code', course_name='$name', instructor_name='$tutor', description='$desc', course_image='$img' WHERE id=$id";
     return mysqli_query($db, $sql);
 }
 
-function updateCourse($db, $id, $code, $name, $instructor, $description) {
-    $id = (int)$id;
+function updateCourse($db, $id, $code, $name, $tutor, $desc) {
+    $id = intval($id);
     $code = mysqli_real_escape_string($db, $code);
     $name = mysqli_real_escape_string($db, $name);
-    $instructor = mysqli_real_escape_string($db, $instructor);
-    $description = mysqli_real_escape_string($db, $description);
+    $tutor = mysqli_real_escape_string($db, $tutor);
+    $desc = mysqli_real_escape_string($db, $desc);
 
-    $sql = "UPDATE course SET course_code='$code', 
-    course_name='$name', 
-    instructor_name='$instructor', 
-    description='$description' WHERE id=$id";
+    $sql = "UPDATE course SET course_code='$code', course_name='$name', instructor_name='$tutor', description='$desc' WHERE id=$id";
     return mysqli_query($db, $sql);
 }
 
 function deleteCourse($db, $id) {
-    $id = (int)$id;
+    $id = intval($id);
     $sql = "DELETE FROM course WHERE id = $id";
     return mysqli_query($db, $sql);
 }
-
-?>
-

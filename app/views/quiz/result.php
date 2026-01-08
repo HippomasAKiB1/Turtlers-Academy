@@ -71,18 +71,14 @@
             text-align: center;
         }
 
-        .score-badge.pass {
             background: #e6fcf5;
             color: #0ca678;
         }
 
-        /* Green */
         .score-badge.fail {
             background: #fff5f5;
             color: #ff6b6b;
         }
-
-        /* Red */
 
         .empty-state {
             text-align: center;

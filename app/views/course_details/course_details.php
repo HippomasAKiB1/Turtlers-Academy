@@ -1,12 +1,5 @@
-<?php 
-/*session_start();
-if(isset($_SESSION['status']) !== true){
-    header('location: ../../public/login.html');
-    exit;
-}
-    */
+<?php
 include "../../models/AdminCourseModel.php";
-//
 
 if (isset($_GET['id'])) {
     $id = (int)$_GET['id'];

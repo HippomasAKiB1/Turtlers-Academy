@@ -1,12 +1,4 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "turtlers_academy");
-/*session_start();
-if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin'){
-    die("Access Denied");
-}
-    */
-
-
 require_once "../models/AdminCourseModel.php";
 
 if(isset($_POST['add_course'])) {

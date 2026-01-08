@@ -1,9 +1,4 @@
 <?php
-/*
-session_start();
-if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin'){
-    die("Access Denied");
-}*/
 require_once '../models/LessonModel.php';
 require_once '../models/AdminCourseModel.php';
 
