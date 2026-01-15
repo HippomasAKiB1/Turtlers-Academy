@@ -1,6 +1,4 @@
-"# Turtlers Academy - an educational platform
-
-## 🌐 Live Deployment
+### Turtlers Academy - an educational platform
 
 **Website:** https://turtlers.akibhasan.me/
 
