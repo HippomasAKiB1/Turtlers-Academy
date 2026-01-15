@@ -61,11 +61,6 @@ Turtlers-Academy/
 - **Hosting:** cPanel-based shared hosting
 - **Protocol:** HTTPS 
 
-## Database Tables (14 Tables)
-
-1. users, course, enrollments, lesson, quizzes, questions, quiz_attempts, quiz_results, forum_threads, forum_comments, ratings, resources, students, instructors
-
-
 
 ## Author
 
