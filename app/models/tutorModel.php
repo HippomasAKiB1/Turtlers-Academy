@@ -32,7 +32,8 @@ function getTutorProfile($conn, $username)
     return [
         "name" => $user['full_name'],
         "institution" => "Turtlers Academy of Tech", 
-        "image" => $user['profile_pic'] ?? "/Turtlers-Academy/public/assets/images/tutor.png",
+        // Store relative image path; views will resolve via base href
+        "image" => $user['profile_pic'] ?? "assets/images/tutor.png",
         "id" => $user['id']
     ];
 }

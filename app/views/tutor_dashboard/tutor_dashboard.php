@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <title>Tutor Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/Turtlers-Academy/public/assets/css/student_dashboard.css">
+    <link rel="stylesheet" href="/repo/Turtlers-Academy/public/assets/css/student_dashboard.css">
 </head>
 <body>
 <div class="dashboard-container">
     <aside class="sidebar">
         <div class="profile-section">
-            <img src="<?php echo $tutorProfile['image']; ?>" class="profile-img">
+            <img src="/repo/Turtlers-Academy/public/<?= ltrim($tutorProfile['image'], '/') ?>" class="profile-img">
             <div class="profile-info">
                 <h3><?php echo $tutorProfile['name']; ?></h3>
                 <p>Tutor</p>
@@ -23,7 +23,7 @@
             <button class="nav-btn" onclick="ajaxTutor('course_settings')">Course Settings</button>
         </nav>
         <div class="sidebar-footer">
-            <a href="../../auth/logout.php" class="logout-link">Logout</a>
+            <a href="/repo/Turtlers-Academy/app/actions/logout.php" class="logout-link">Logout</a>
         </div>
     </aside>
 
@@ -43,6 +43,6 @@
     </main>
 </div>
 <?php include "../bgtoggler/bgtoggler.php"?>
-<script src="/Turtlers-Academy/public/assets/js/tutor_dashboard.js?v=<?php echo time(); ?>"></script>
+<script src="/repo/Turtlers-Academy/public/assets/js/tutor_dashboard.js?v=<?php echo time(); ?>"></script>
 </body>
 </html>

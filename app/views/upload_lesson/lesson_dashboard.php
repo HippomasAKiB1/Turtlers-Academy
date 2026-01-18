@@ -30,7 +30,7 @@ $res = mysqli_query($conn, $sql);
                             <td><?php echo htmlspecialchars($row['lecture_week']); ?></td>
                             <td><?php echo date('Y-m-d', strtotime($row['created_at'])); ?></td>
                             <td>
-                                <a href="/Turtlers-Academy/public/assets/upload/<?php echo $row['file_path']; ?>" class="edit-link" target="_blank">View File</a>
+                                <a href="/repo/Turtlers-Academy/public/assets/upload/<?php echo $row['file_path']; ?>" class="edit-link" target="_blank">View File</a>
                             </td>
                         </tr>
                     <?php endwhile; ?>

@@ -1,6 +1,6 @@
-<h2><?= $course['name'] ?></h2>
-<p><?= $course['short_description'] ?></p>
-<p><?= $course['full_description'] ?></p>
+<h2><?= htmlspecialchars($course['course_name'] ?? $course['name'] ?? 'Course') ?></h2>
+<p><?= htmlspecialchars($course['short_description'] ?? $course['description'] ?? '') ?></p>
+<p><?= htmlspecialchars($course['full_description'] ?? '') ?></p>
 <p><strong>Average Rating:</strong> <?= $rating ?>/5</p>
 
 <?php if($user_id && $enrolled): ?>

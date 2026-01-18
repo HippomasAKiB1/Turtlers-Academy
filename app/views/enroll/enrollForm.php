@@ -2,8 +2,8 @@
 <html>
 
 <head>
-    <title>Enroll | <?= $course['name'] ?></title>
-    <link rel="stylesheet" href="assets/css/enroll_style.css">
+    <title>Enroll | <?= htmlspecialchars($course['course_name'] ?? $course['name'] ?? 'Course') ?></title>
+    <link rel="stylesheet" href="/repo/Turtlers-Academy/public/assets/css/enroll_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -127,7 +127,7 @@
     <div class="enroll-container">
         <div class="course-info">
             <p>You are enrolling in:</p>
-            <h2><?= $course['name'] ?></h2>
+            <h2><?= htmlspecialchars($course['course_name'] ?? $course['name'] ?? 'Course') ?></h2>
             <p>Complete your registration to get instant access to all course materials, quizzes, and the student forum.
             </p>
             <p style="margin-top:20px; font-weight:600;">Price: FREE</p>
@@ -150,7 +150,7 @@
         <div class="popup-content">
             <span class="checkmark">✔</span>
             <h2>Enrollment Successful!</h2>
-            <p>Welcome to <strong><?= $course['name'] ?></strong></p>
+            <p>Welcome to <strong><?= htmlspecialchars($course['course_name'] ?? $course['name'] ?? 'Course') ?></strong></p>
             <div style="margin-top:20px;">
                 <button onclick="location.href='course.php'"
                     style="background:#000; color:#fff; border:1px solid #fff; margin-bottom:10px;">Back to Courses</button>

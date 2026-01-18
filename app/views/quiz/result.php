@@ -108,10 +108,10 @@
     <div class="container">
         <h2>My Learning Progress</h2>
 
-        <?php if (mysqli_num_rows($results) == 0): ?>
+                <?php if (mysqli_num_rows($results) == 0): ?>
             <div class="empty-state">
                 <p>You haven't taken any quizzes yet.</p>
-                <a href="/Turtlers-Academy/public/quiz.php" class="btn-back">Take a Quiz</a>
+                        <a href="/repo/Turtlers-Academy/public/quiz.php" class="btn-back">Take a Quiz</a>
             </div>
         <?php else: ?>
             <div class="results-list">
@@ -134,7 +134,7 @@
                     </div>
                 <?php endwhile; ?>
             </div>
-            <a href="/Turtlers-Academy/public/index.php" class="btn-back">Back to Dashboard</a>
+            <a href="/repo/Turtlers-Academy/public/index.php" class="btn-back">Back to Dashboard</a>
         <?php endif; ?>
 
     </div>

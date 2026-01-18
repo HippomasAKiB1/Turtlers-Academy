@@ -1,0 +1,389 @@
+/* ================================================
+   TURTLERS ACADEMY - HOME PAGE STYLES
+   ================================================ */
+
+/* Root Colors */
+:root {
+    --primary-color: #ff7b00;
+    --secondary-color: #333;
+    --light-bg: #f8f9fa;
+    --light-gray: #e9ecef;
+    --text-dark: #111;
+    --text-muted: #777;
+    --text-gray: #555;
+    --white: #ffffff;
+    --border-color: #eee;
+    --shadow-light: 0 5px 20px rgba(0, 0, 0, 0.03);
+    --shadow-medium: 0 5px 15px rgba(255, 123, 0, 0.3);
+}
+
+/* ================================================
+   HERO SECTION
+   ================================================ */
+.hero-section {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    margin-bottom: 50px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.accent-text {
+    color: var(--primary-color);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-medium);
+}
+
+.hero-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 123, 0, 0.4);
+}
+
+.hero-btn:active {
+    transform: scale(0.98);
+}
+
+/* ================================================
+   SECTION CONTAINER & HEADERS
+   ================================================ */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/* ================================================
+   COURSES SECTION
+   ================================================ */
+.courses-section {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.course-box {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-light);
+}
+
+.course-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.course-box h3 {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.course-box p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.course-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+/* ================================================
+   BUTTONS
+   ================================================ */
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    flex: 1;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: #ff6a00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 123, 0, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background: var(--light-gray);
+    color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background: #ddd;
+    transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+}
+
+/* ================================================
+   TUTORS SECTION
+   ================================================ */
+.tutors-section {
+    background: #fdfdfd;
+    padding: 80px 20px;
+}
+
+.tutors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.tutor-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-light);
+}
+
+.tutor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.tutor-avatar {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 auto 20px;
+}
+
+.tutor-name {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.tutor-title {
+    color: #888;
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.tutor-email {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* ================================================
+   POPUP/MODAL
+   ================================================ */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.popup.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: var(--text-dark);
+}
+
+#popup-body {
+    margin-top: 15px;
+}
+
+/* ================================================
+   ANIMATIONS
+   ================================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ================================================
+   RESPONSIVE DESIGN
+   ================================================ */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .course-grid,
+    .tutors-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .course-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .popup-content {
+        width: 95%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 50px 15px;
+        margin-bottom: 30px;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin: 0 auto 20px;
+    }
+
+    .hero-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .tutors-section,
+    .courses-section {
+        padding: 50px 15px;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+}

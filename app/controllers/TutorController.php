@@ -19,7 +19,8 @@ if (!$tutorData) {
     $tutorData = [
         "name" => $tutorName,
         "institution" => "Turtlers Academy",
-        "image" => "/Turtlers-Academy/public/assets/images/tutor.png",
+        // Use relative public asset path (resolved by base href in views)
+        "image" => "assets/images/tutor.png",
         "id" => 0
     ];
 }
@@ -198,7 +199,8 @@ if (isset($_GET['action'])) {
 
                 $newFileName = time() . '_' . preg_replace("/[^a-zA-Z0-9.]/", "_", $fileName);
                 $targetFile = $targetDir . $newFileName;
-                $dbPath = "/Turtlers-Academy/public/assets/uploads/resources/" . $newFileName;
+                // Store relative path for the uploaded resource (views will resolve via base href)
+                $dbPath = "assets/uploads/resources/" . $newFileName;
 
                 if (move_uploaded_file($_FILES['resource_file']['tmp_name'], $targetFile)) {
                    

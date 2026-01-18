@@ -1,5 +1,14 @@
 <link rel="stylesheet" href="assets/css/quiz.css">
-<script src="/Turtlers-Academy/public/assets/js/quiz.js" defer></script>
+<?php
+// Compute public path
+$scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
+$basePath = preg_replace('#/public.*$#', '', $scriptName);
+if ($basePath === '/' || $basePath === '\\') {
+    $basePath = '';
+}
+$publicPath = $basePath . '/public';
+?>
+<script src="<?= htmlspecialchars($publicPath, ENT_QUOTES, 'UTF-8') ?>/assets/js/quiz.js" defer></script>
 
 
 <h2>Taking: <?= htmlspecialchars($quiz['title']) ?></h2>

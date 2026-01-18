@@ -1,3 +1,13 @@
+<?php
+// Compute base/public paths so links resolve whether entry is root or public
+$scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
+$basePath = preg_replace('#/public.*$#', '', $scriptName);
+if ($basePath === '/' || $basePath === '\\') {
+    $basePath = '';
+}
+$publicPath = $basePath . '/public';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +15,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turtlers Academy</title>
+    <base href="<?= htmlspecialchars($publicPath, ENT_QUOTES, 'UTF-8') ?>/">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -103,24 +114,24 @@
         <div class="bar">
 
             <div>
-                <a href="/Turtlers-Academy/public/index.php" style="text-decoration:none;">
+                <a href="index.php" style="text-decoration:none;">
                     <span class="brand">&lt;Turtlers<span class="academy">Academy</span></span>
                 </a>
             </div>
 
             <nav class="main-nav">
-                <a href="/Turtlers-Academy/public/index.php">Home</a>
-                <a href="/Turtlers-Academy/public/course.php">Courses</a>
-                <a href="/Turtlers-Academy/public/forum.php">Forum</a>
-                <a href="/Turtlers-Academy/public/quiz.php">Quizzes</a>
-                <a href="/Turtlers-Academy/public/results.php">Results</a>
+                <a href="index.php">Home</a>
+                <a href="course.php">Courses</a>
+                <a href="forum.php">Forum</a>
+                <a href="quiz.php">Quizzes</a>
+                <a href="results.php">Results</a>
                 <a href="#about">About</a>
             </nav>
 
             <?php if (isset($_SESSION['user_id'])): ?>
-                <a class="btn-login" href="#">Dashboard</a>
+                <a class="btn-login" href="index.php#mydashboard">Dashboard</a>
             <?php else: ?>
-                <a class="btn-login" href="#">Log In</a>
+                <a class="btn-login" href="login.php">Log In</a>
             <?php endif; ?>
 
         </div>

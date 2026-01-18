@@ -1,7 +1,7 @@
 
 async function ajaxTutor(action) {
     const displayArea = document.getElementById('main-display');
-    const res = await fetch(`/Turtlers-Academy/app/controllers/TutorController.php?action=${action}`);
+    const res = await fetch(`/repo/Turtlers-Academy/app/controllers/TutorController.php?action=${action}`);
     const html = await res.text();
     displayArea.innerHTML = html;
 }
@@ -16,7 +16,7 @@ async function submitUpload(e) {
     statusDiv.innerHTML = "Processing...";
 
     try {
-        const res = await fetch('/Turtlers-Academy/app/controllers/TutorController.php?action=process_upload', {
+        const res = await fetch('/repo/Turtlers-Academy/app/controllers/TutorController.php?action=process_upload', {
             method: 'POST',
             body: formData
         });

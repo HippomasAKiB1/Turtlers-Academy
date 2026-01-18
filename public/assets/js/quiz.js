@@ -78,7 +78,7 @@ function submitQuiz() {
             }
         }
     };
-    xhttp.open("POST", "/Turtlers-Academy/public/ajax/submit_quiz.php", true);
+    xhttp.open("POST", "/repo/Turtlers-Academy/public/ajax/submit_quiz.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("quiz_id=" + quizId + "&answers=" + JSON.stringify(answers));
 }

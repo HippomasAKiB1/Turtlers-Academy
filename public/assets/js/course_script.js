@@ -1,7 +1,7 @@
 document.querySelectorAll('.details-btn').forEach(btn => {
     btn.addEventListener('click', function(){
         let courseId = this.closest('.course-box').dataset.id;
-        fetch("/Turtlers-Academy/app/controllers/courseController.php?action=courseDetails&id=" + courseId)
+        fetch("/repo/Turtlers-Academy/app/controllers/courseController.php?action=courseDetails&id=" + courseId)
             .then(res => res.text())
             .then(data => {
                 document.getElementById('popup-body').innerHTML = data;
